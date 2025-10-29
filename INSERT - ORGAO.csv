@@ -1,0 +1,7 @@
+id_Orgao, nome_orgao, sigla, jurisdiçao
+1, Policia Rodoviária Federal, PRF, Federal
+2, Departamento Nacional de Trânsito,DENATRAN,Federal
+3,Departamento Estadual de Trânsito do Rio de Janeiro,DETRAN-RJ,Estadual
+4,Departamento Estadual de Trânsito de Minas Gerais,DETRAN-MG,Estadual
+5,Departamento Estadual de Trânsito de Santa Catarina,DETRAN-SC,Estadual
+6,Departamento Estadual de Trânsito de São Paulo,DETRAN-SP,Estadual
