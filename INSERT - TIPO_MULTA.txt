@@ -1,0 +1,14 @@
+INSERT INTO tipo_multa (id_Tipo_Multa, descriçao, Pontuação, valor_base, gravidade) VALUES
+(1, 'Ultrapassar pelo acostamento', 7, 957.70, 'Gravissima'),
+(2, 'Avançar o sinal vermelho do semáforo', 7, 293.47, 'Gravissima'),
+(3, 'Dirigir sob efeito de álcool', 7, 2934.47, 'Gravissima'),
+(4, 'Transitar em velocidade superior à máxima em até 20%', 4, 130.16, 'Media'),
+(5, 'Transitar em velocidade superior à máxima entre 20% e 50%', 5, 195.23, 'Grave'),
+(6, 'Transitar em velocidade superior à máxima em mais de 50%', 7, 880.41, 'Gravissima'),
+(7, 'Estacionar local/horário de estacionamento e parada proibidos pela sinalização', 5, 195.23, 'Grave'),
+(8, 'Deixar de usar o cinto de segurança', 5, 195.23, 'Grave'),
+(9, 'Usar o celular ao volante', 5, 130.16, 'Media'),
+(10, 'Conduzir motocicleta sem capacete', 7, 293.47, 'Gravissima'),
+(11, 'Parar sobre a faixa de pedestre na mudança de sinal', 4, 130.16, 'Media'),
+(12, 'Estacionar nos acostamentos', 3, 88.38, 'Leve'),
+(13, 'Transportar criança sem observância das normas de segurança estabelecidas p/ CTB', 7, 293.47, 'Gravissima');
