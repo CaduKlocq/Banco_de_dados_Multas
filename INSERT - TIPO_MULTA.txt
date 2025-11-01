@@ -1,4 +1,4 @@
-INSERT INTO tipo_multa (id_Tipo_Multa, descriçao, Pontuação, valor_base, gravidade) VALUES
+INSERT INTO tipo_multa (id_Tipo_Multa, descricao, pontuacao, valor_multa, gravidade) VALUES
 (1, 'Ultrapassar pelo acostamento', 7, 957.70, 'Gravissima'),
 (2, 'Avançar o sinal vermelho do semáforo', 7, 293.47, 'Gravissima'),
 (3, 'Dirigir sob efeito de álcool', 7, 2934.47, 'Gravissima'),
