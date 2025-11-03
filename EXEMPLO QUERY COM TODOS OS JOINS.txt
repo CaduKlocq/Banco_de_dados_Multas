@@ -1,0 +1,25 @@
+SELECT 
+   
+    m.data_multa,
+    m.vencimento_multa,
+    a.nome AS nome_agente,
+    o.nome_orgao,
+    o.Jurisdicao AS esfera_orgao,
+    i.nome AS nome_infrator,
+    c.registro_cnh,
+    c.categoria,
+    v.modelo,
+    v.marca,
+    t.descricao AS tipo_infracao,
+    t.gravidade,
+    t.valor_base
+    
+FROM multa m
+JOIN agente a ON m.Agente_id_agente = a.id_agente
+JOIN orgao o ON a.Orgao_id_orgao = o.id_orgao
+JOIN infrator i ON m.Infrator_id_Infrator = i.id_Infrator
+JOIN cnh c ON i.CNH_id_CNH = c.id_CNH
+JOIN veiculo v ON m.Veiculo_id_Veiculo = v.id_Veiculo
+JOIN tipo_multa t ON m.Tipo_Multa_id_Tipo_Multa = t.id_Tipo_Multa
+WHERE t.valor_base > 196
+order by t.valor_base DESC;
