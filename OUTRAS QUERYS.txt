@@ -1,0 +1,86 @@
+SELECT 
+    v.marca,
+    SUM(t.valor_base) AS total_multas
+FROM multa m
+JOIN veiculo v ON m.Veiculo_id_Veiculo = v.id_Veiculo
+JOIN tipo_multa t ON m.Tipo_Multa_id_Tipo_Multa = t.id_Tipo_Multa
+GROUP BY v.marca
+ORDER BY total_multas DESC;
+
+
+
+---------------------------------------
+
+
+SELECT 
+    v.marca,
+    COUNT(*) AS qtd_multas,
+    SUM(t.valor_base) AS total_valor
+FROM multa m
+JOIN veiculo v ON m.Veiculo_id_Veiculo = v.id_Veiculo
+JOIN tipo_multa t ON m.Tipo_Multa_id_Tipo_Multa = t.id_Tipo_Multa
+GROUP BY v.marca
+ORDER BY total_valor DESC;
+
+
+---------------------------------------
+
+
+SELECT 
+    v.marca,
+    COUNT(*) AS qtd_gravissimas
+FROM multa m
+JOIN veiculo v ON m.Veiculo_id_Veiculo = v.id_Veiculo
+JOIN tipo_multa t ON m.Tipo_Multa_id_Tipo_Multa = t.id_Tipo_Multa
+WHERE t.gravidade = 'Gravíssima'
+GROUP BY v.marca
+ORDER BY qtd_gravissimas DESC;
+
+
+----------------------------------------
+
+SELECT 
+    i.nome AS infrator,
+    COUNT(m.id_Multa) AS qtd_multas,
+    SUM(t.valor_base) AS total_valor
+FROM multa m
+JOIN infrator i ON m.Infrator_id_Infrator = i.id_Infrator
+JOIN tipo_multa t ON m.Tipo_Multa_id_Tipo_Multa = t.id_Tipo_Multa
+GROUP BY i.nome
+ORDER BY total_valor DESC;
+
+
+-------------------------------------------
+
+
+SELECT 
+    a.nome AS agente,
+    o.nome_orgao,
+    COUNT(m.id_Multa) AS qtd_multas
+FROM multa m
+JOIN agente a ON m.Agente_id_agente = a.id_agente
+JOIN orgao o ON a.Orgao_id_orgao = o.id_orgao
+GROUP BY a.nome, o.nome_orgao
+ORDER BY qtd_multas DESC;
+
+
+--------------------------------------------
+
+
+SELECT SUM(t.valor_base) AS total_arrecadado
+FROM multa m
+JOIN tipo_multa t ON m.Tipo_Multa_id_Tipo_Multa = t.id_Tipo_Multa;
+
+
+---------------------------------------------
+
+
+
+SELECT 
+    t.descricao AS tipo_infracao,
+    COUNT(m.id_Multa) AS qtd_aplicacoes
+FROM multa m
+JOIN tipo_multa t ON m.Tipo_Multa_id_Tipo_Multa = t.id_Tipo_Multa
+GROUP BY t.descricao
+ORDER BY qtd_aplicacoes DESC;
+
